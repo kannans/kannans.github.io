@@ -5,10 +5,11 @@
   "scripts": {
     "start": "webpack-dev-server --inline --content-base ."
   },
-  "author": "",
-  "license": "ISC",
+  "author": "kannanhudson@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "react": "^0.14.7",
+    "react-bootstrap": "^0.30.2",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.0"
   },
@@ -21,5 +22,5 @@
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
   },
-  "description": ""
+  "description": "Sample react app login"
 }
