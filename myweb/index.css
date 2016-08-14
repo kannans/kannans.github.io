@@ -24,3 +24,10 @@
 .social-icons a {
   margin: 0 10px;
 }
+
+.about-me p{
+  font-size: 17pt;
+  font-family: sans-serif;
+  text-align: justify;
+  margin: 4% auto;
+}

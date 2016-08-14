@@ -1,5 +1,6 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import NavLink from './NavLink'
 
 export default React.createClass({
   render(){
@@ -13,10 +14,11 @@ export default React.createClass({
           </Navbar.Header>
           <Navbar.Collapse>
             <Nav pullRight>
-              <NavItem eventKey={1} href="#">About Me</NavItem>
-              <NavItem eventKey={1} href="#">My Work</NavItem>
-              <NavItem eventKey={2} href="#">Contact Me</NavItem>
-             </Nav>
+              <li><NavLink to="/" onlyActiveOnIndex>Home</NavLink></li>
+              <li><NavLink to="/about">About Me</NavLink></li>
+              <li><NavLink to="/works">My Works</NavLink></li>
+              <li><NavLink to="/contact">Contact Me</NavLink></li>
+           </Nav>
           </Navbar.Collapse>
         </Navbar>
       )
