@@ -25374,17 +25374,21 @@
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Home = __webpack_require__(480);
+	var _Home = __webpack_require__(481);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Contact = __webpack_require__(482);
+	var _Contact = __webpack_require__(483);
 
 	var _Contact2 = _interopRequireDefault(_Contact);
 
-	var _Works = __webpack_require__(483);
+	var _Works = __webpack_require__(484);
 
 	var _Works2 = _interopRequireDefault(_Works);
+
+	var _Work = __webpack_require__(485);
+
+	var _Work2 = _interopRequireDefault(_Work);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25397,7 +25401,11 @@
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: '/contact', component: _Contact2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/works', component: _Works2.default })
+	    _react2.default.createElement(
+	      _reactRouter.Route,
+	      { path: '/works', component: _Works2.default },
+	      _react2.default.createElement(_reactRouter.Route, { path: '/works/:langName', component: _Work2.default })
+	    )
 	  )
 	);
 
@@ -25434,19 +25442,6 @@
 	        null,
 	        _react2.default.createElement(_Header2.default, null),
 	        this.props.children
-	      ),
-	      _react2.default.createElement(
-	        "footer",
-	        { className: "footer" },
-	        _react2.default.createElement(
-	          "div",
-	          { className: "container" },
-	          _react2.default.createElement(
-	            "p",
-	            { className: "text-muted" },
-	            "© 2016 Kannansv.in. All Rights Reserved."
-	          )
-	        )
 	      )
 	    );
 	  }
@@ -44374,7 +44369,7 @@
 /* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -44384,37 +44379,56 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Specialities = __webpack_require__(480);
+
+	var _Specialities2 = _interopRequireDefault(_Specialities);
+
+	var _reactBootstrap = __webpack_require__(225);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: "About",
+	  displayName: 'About',
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "div",
-	      { className: "about-me" },
+	      'div',
+	      { className: 'about-me' },
 	      _react2.default.createElement(
-	        "header",
-	        { className: "text-center" },
+	        'header',
+	        { className: 'text-center' },
 	        _react2.default.createElement(
-	          "h2",
-	          null,
-	          "About Me"
+	          'h2',
+	          { className: 'text-center' },
+	          'About Me'
 	        )
 	      ),
 	      _react2.default.createElement(
-	        "p",
-	        null,
-	        "Hello, I’m Kannan. I’m a Software Engineer, FullStack web developer in India. 5+ Year's of experience with developing fast and reliable web applications using Ruby On Rails and also using ReactJS, AngularJS, EmberJS, HTML5, CSS3 and Responsive. Please checkout my work area."
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        "I have completed My Bachelor Of Engineering in Computer Science and Engineering at Vickram College of Engineering / Anna University Trichy @ 2011."
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        "My hobbies is  developing awesome Sass application, playing Guitar,  problem solving, reading books, browsing and designing web pages. I like to play Football, Computer games, Chatting with friends, Long Travels,  Swimming, Photography, Researching about unbelievable things."
+	        _reactBootstrap.Row,
+	        { className: 'show-grid' },
+	        _react2.default.createElement(
+	          _reactBootstrap.Col,
+	          { xs: 12, md: 5 },
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Hello, I’m Kannan. I’m a Software Engineer, FullStack web developer in India. 5+ Year\'s of experience with developing fast and reliable web applications using Ruby On Rails and also using ReactJS, AngularJS, EmberJS, HTML5, CSS3 and Responsive. Please checkout my work area.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'I have completed My Bachelor Of Engineering in Computer Science and Engineering at Vickram College of Engineering / Anna University Trichy @ 2011.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'My hobbies is  developing awesome Sass application, playing Guitar,  problem solving, reading books, browsing and designing web pages. I like to play Football, Computer games, Chatting with friends, Long Travels,  Swimming, Photography, Researching about unbelievable things.'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactBootstrap.Col,
+	          { xs: 12, md: 7 },
+	          _react2.default.createElement(_Specialities2.default, null)
+	        )
 	      )
 	    );
 	  }
@@ -44422,6 +44436,247 @@
 
 /***/ },
 /* 480 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(225);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Specialities',
+	  render: function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        _reactBootstrap.Table,
+	        { striped: true, bordered: true, condensed: true, hover: true },
+	        _react2.default.createElement(
+	          'caption',
+	          { className: 'text-center' },
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            'My Specialties '
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'tbody',
+	          null,
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Languages '
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Ruby, Python, Javascript'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Web Tech'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Ruby On Rails 3+, Dijango, HTML5, HAML, CSS3, SASS, Jquery, Ajax, CoffeeScript'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'JS Framwork'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' ReactJS, AngularJS, EmberJS, MeteorJS'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'API'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Custom API, Grapes, API-Pie. '
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Source Code'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Git, Git-flow, Github, Bitbuket.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'DBMS'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Postgresql, MySql, SQlite, MongoDB.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'BDD '
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Rspec, Capybara, FactoryGirl, Jasmine'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Web server'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Node, Nginx, Puma, Webrick, Unicorn, Thin.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Cloud'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Heroku, Amazon EC2, Bluehost, DigitalOcean.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Deployment Tools'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Capistrano3, Docker.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Omniauth'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Facebook, Gmail, Twitter, Linkedin.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'Mobile Tech'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Ionic Framework, PhoneGap, JQuery Mobile.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'CMS'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Custom CMS, Refinary CMS, Rails admin, Active admin.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'tr',
+	            null,
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'tl' },
+	              'E-commerce'
+	            ),
+	            _react2.default.createElement(
+	              'td',
+	              { className: 'lang' },
+	              ' Custom eCommerce, Spree, ROR-E.com.'
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44434,9 +44689,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactFontawesome = __webpack_require__(481);
+	var _reactFontawesome = __webpack_require__(482);
 
 	var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+	var _Specialities = __webpack_require__(480);
+
+	var _Specialities2 = _interopRequireDefault(_Specialities);
 
 	var _reactBootstrap = __webpack_require__(225);
 
@@ -44446,89 +44705,93 @@
 	  displayName: "Home",
 	  render: function render() {
 	    return _react2.default.createElement(
-	      _reactBootstrap.Jumbotron,
+	      "div",
 	      null,
 	      _react2.default.createElement(
-	        _reactBootstrap.Row,
-	        { className: "show-grid" },
+	        _reactBootstrap.Jumbotron,
+	        null,
 	        _react2.default.createElement(
-	          _reactBootstrap.Col,
-	          { xs: 12, md: 3 },
-	          _react2.default.createElement(_reactBootstrap.Image, { src: "http://kannansv.in/assets/me.jpg", circle: true,
-	            responsive: true }),
+	          _reactBootstrap.Row,
+	          { className: "show-grid" },
 	          _react2.default.createElement(
 	            _reactBootstrap.Col,
-	            { xs: 12, md: 12, className: "social-icons" },
+	            { xs: 12, md: 3 },
+	            _react2.default.createElement(_reactBootstrap.Image, { src: "http://kannansv.in/assets/me.jpg", circle: true,
+	              responsive: true }),
 	            _react2.default.createElement(
-	              "a",
-	              { href: "http://in.linkedin.com/pub/kannan-sv/3a/693/71" },
-	              _react2.default.createElement(_reactFontawesome2.default, {
-	                className: "super-crazy-colors",
-	                name: "linkedin-square",
-	                size: "2x",
-	                style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
-	              })
-	            ),
-	            _react2.default.createElement(
-	              "a",
-	              { href: "https://twitter.com/kannanhudson" },
-	              _react2.default.createElement(_reactFontawesome2.default, {
-	                className: "super-crazy-colors",
-	                name: "twitter-square",
-	                size: "2x",
-	                style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
-	              })
-	            ),
-	            _react2.default.createElement(
-	              "a",
-	              { href: "https://github.com/kannans" },
-	              _react2.default.createElement(_reactFontawesome2.default, {
-	                className: "super-crazy-colors",
-	                name: "github-square",
-	                size: "2x",
-	                style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
-	              })
-	            ),
-	            _react2.default.createElement(
-	              "a",
-	              { href: "skype:kannanhudson?userinfo" },
-	              _react2.default.createElement(_reactFontawesome2.default, {
-	                className: "super-crazy-colors",
-	                name: "skype",
-	                size: "2x",
-	                style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
-	              })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactBootstrap.Col,
-	          { xs: 12, md: 7 },
-	          _react2.default.createElement(
-	            "header",
-	            null,
-	            _react2.default.createElement(
-	              "h1",
-	              null,
-	              "Hi. I'm ",
+	              _reactBootstrap.Col,
+	              { xs: 12, md: 12, className: "social-icons" },
 	              _react2.default.createElement(
-	                "strong",
-	                null,
-	                "Kannan"
+	                "a",
+	                { href: "http://in.linkedin.com/pub/kannan-sv/3a/693/71" },
+	                _react2.default.createElement(_reactFontawesome2.default, {
+	                  className: "super-crazy-colors",
+	                  name: "linkedin-square",
+	                  size: "2x",
+	                  style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
+	                })
 	              ),
-	              "."
+	              _react2.default.createElement(
+	                "a",
+	                { href: "https://twitter.com/kannanhudson" },
+	                _react2.default.createElement(_reactFontawesome2.default, {
+	                  className: "super-crazy-colors",
+	                  name: "twitter-square",
+	                  size: "2x",
+	                  style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
+	                })
+	              ),
+	              _react2.default.createElement(
+	                "a",
+	                { href: "https://github.com/kannans" },
+	                _react2.default.createElement(_reactFontawesome2.default, {
+	                  className: "super-crazy-colors",
+	                  name: "github-square",
+	                  size: "2x",
+	                  style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
+	                })
+	              ),
+	              _react2.default.createElement(
+	                "a",
+	                { href: "skype:kannanhudson?userinfo" },
+	                _react2.default.createElement(_reactFontawesome2.default, {
+	                  className: "super-crazy-colors",
+	                  name: "skype",
+	                  size: "2x",
+	                  style: { textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }
+	                })
+	              )
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "p",
-	            null,
-	            "Emergent Software Developer with IT work experience, holding knowledge of",
+	            _reactBootstrap.Col,
+	            { xs: 12, md: 7 },
 	            _react2.default.createElement(
-	              "strong",
+	              "header",
 	              null,
-	              " Ruby On Rails"
+	              _react2.default.createElement(
+	                "h1",
+	                null,
+	                "Hi. I'm ",
+	                _react2.default.createElement(
+	                  "strong",
+	                  null,
+	                  "Kannan"
+	                ),
+	                "."
+	              )
 	            ),
-	            ", ReactJS, AngularJS, HTML5, CSS3, JQuery, Responsive Design."
+	            _react2.default.createElement(
+	              "p",
+	              null,
+	              "Emergent Software Developer with IT work experience, holding knowledge of",
+	              _react2.default.createElement(
+	                "strong",
+	                null,
+	                " Ruby On Rails"
+	              ),
+	              ", ReactJS, AngularJS, HTML5, CSS3, JQuery, Responsive Design."
+	            )
 	          )
 	        )
 	      )
@@ -44537,7 +44800,7 @@
 	});
 
 /***/ },
-/* 481 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44657,7 +44920,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 482 */
+/* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -44701,10 +44964,10 @@
 	});
 
 /***/ },
-/* 483 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -44714,30 +44977,152 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactBootstrap = __webpack_require__(225);
+
+	var _NavLink = __webpack_require__(478);
+
+	var _NavLink2 = _interopRequireDefault(_NavLink);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: "Works",
+	  displayName: 'Works',
 	  render: function render() {
 	    return _react2.default.createElement(
-	      "div",
+	      'div',
 	      null,
 	      _react2.default.createElement(
-	        "div",
-	        { className: "about-me contact-me" },
+	        'div',
+	        { className: 'about-me contact-me' },
 	        _react2.default.createElement(
-	          "header",
-	          { className: "text-center" },
+	          'header',
+	          { className: 'text-center' },
 	          _react2.default.createElement(
-	            "h2",
+	            'h2',
 	            null,
-	            "My Works"
+	            'My Works'
 	          )
 	        ),
 	        _react2.default.createElement(
-	          "p",
-	          null,
-	          "work in progress"
+	          _reactBootstrap.Row,
+	          { className: 'show-grid' },
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 1, md: 2 },
+	            _react2.default.createElement(
+	              _reactBootstrap.ListGroup,
+	              null,
+	              _react2.default.createElement(
+	                _NavLink2.default,
+	                { to: '/works/rails', className: 'list-group-item' },
+	                'Ruby On Rails'
+	              ),
+	              _react2.default.createElement(
+	                _NavLink2.default,
+	                { to: '/works/ruby', className: 'list-group-item' },
+	                'Ruby'
+	              ),
+	              _react2.default.createElement(
+	                _NavLink2.default,
+	                { to: '/works/reactjs', className: 'list-group-item' },
+	                'React JS'
+	              ),
+	              _react2.default.createElement(
+	                _NavLink2.default,
+	                { to: '/works/angularjs', className: 'list-group-item' },
+	                'Angular JS'
+	              ),
+	              _react2.default.createElement(
+	                _NavLink2.default,
+	                { to: '/works/emberjs', className: 'list-group-item' },
+	                'Ember JS'
+	              ),
+	              _react2.default.createElement(
+	                _NavLink2.default,
+	                { to: '/works/python', className: 'list-group-item' },
+	                'Python'
+	              ),
+	              _react2.default.createElement(
+	                _NavLink2.default,
+	                { to: '/works/mobile', className: 'list-group-item' },
+	                'Mobile Apps'
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactBootstrap.Col,
+	            { xs: 1, md: 10 },
+	            this.props.children
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 485 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(225);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Work',
+	  render: function render() {
+	    var langName = this.props.params.langName;
+
+	    return _react2.default.createElement(
+	      _reactBootstrap.Row,
+	      null,
+	      _react2.default.createElement(
+	        _reactBootstrap.Col,
+	        { xs: 6, md: 4 },
+	        _react2.default.createElement(
+	          _reactBootstrap.Thumbnail,
+	          { src: 'http://www.webascender.com/portals/0/Images/Services/logo-rails.jpg', alt: '242x200' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            langName
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        _reactBootstrap.Col,
+	        { xs: 6, md: 4 },
+	        _react2.default.createElement(
+	          _reactBootstrap.Thumbnail,
+	          { src: 'http://www.webascender.com/portals/0/Images/Services/logo-rails.jpg', alt: '242x200' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            langName
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        _reactBootstrap.Col,
+	        { xs: 6, md: 4 },
+	        _react2.default.createElement(
+	          _reactBootstrap.Thumbnail,
+	          { src: 'http://www.webascender.com/portals/0/Images/Services/logo-rails.jpg', alt: '242x200' },
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            langName
+	          )
 	        )
 	      )
 	    );

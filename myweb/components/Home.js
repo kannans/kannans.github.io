@@ -1,10 +1,12 @@
 import React from "react";
 import FontAwesome from "react-fontawesome";
+import Specialities from "./Specialities";
 import {Image, Jumbotron, Row, Col} from "react-bootstrap";
 
 export default React.createClass({
   render() {
     return (
+      <div>
         <Jumbotron>
           <Row className="show-grid">
             <Col xs={12} md={3}>
@@ -58,6 +60,7 @@ export default React.createClass({
             </Col>
           </Row>
         </Jumbotron>
+      </div>
     )
   }
 })
