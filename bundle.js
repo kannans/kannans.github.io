@@ -25389,12 +25389,16 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	module.exports = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { path: '/', component: _App2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/contact', component: _Contact2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/works', component: _Works2.default })
+	  _reactRouter.Router,
+	  { history: _reactRouter.browserHistory },
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { path: '/', component: _App2.default },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/contact', component: _Contact2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/works', component: _Works2.default })
+	  )
 	);
 
 /***/ },
@@ -44656,7 +44660,7 @@
 /* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -44669,12 +44673,29 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Contact',
+	  displayName: "Contact",
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'div',
+	      "div",
 	      null,
-	      'Contact page'
+	      _react2.default.createElement(
+	        "div",
+	        { className: "about-me contact-me" },
+	        _react2.default.createElement(
+	          "header",
+	          { className: "text-center" },
+	          _react2.default.createElement(
+	            "h2",
+	            null,
+	            "Contact Me"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "work in progress"
+	        )
+	      )
 	    );
 	  }
 	});
@@ -44683,7 +44704,7 @@
 /* 483 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -44696,12 +44717,29 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Works',
+	  displayName: "Works",
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'div',
+	      "div",
 	      null,
-	      'Works page'
+	      _react2.default.createElement(
+	        "div",
+	        { className: "about-me contact-me" },
+	        _react2.default.createElement(
+	          "header",
+	          { className: "text-center" },
+	          _react2.default.createElement(
+	            "h2",
+	            null,
+	            "My Works"
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "work in progress"
+	        )
+	      )
 	    );
 	  }
 	});
