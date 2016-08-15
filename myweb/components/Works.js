@@ -29,7 +29,8 @@ export default React.createClass({
             _this.setState({
               load: true
             });
-            this.context.router.push('/works/rails/');
+            const path = `/works/1`;
+            this.context.router.push(path);
         }.bind(this));
     },
 
