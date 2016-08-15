@@ -3,7 +3,7 @@ import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
 import NavLink from "./NavLink"
 import axios from 'axios'
 
-const requestUrl = 'http://localhost:8080/data/meta.json';
+const requestUrl = 'http://kannansv.in/data/meta.json';
 
 export default React.createClass({
     getInitialState: function() {
