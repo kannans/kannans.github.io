@@ -1,7 +1,7 @@
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './index.js',
+  entry: '/myweb/index.js',
 
   output: {
     filename: 'bundle.js',
