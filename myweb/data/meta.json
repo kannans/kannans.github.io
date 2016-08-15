@@ -1,9 +1,1 @@
-{ "languages": [
-    {"id":"rails", "name": "Ruby On Rails"},
-    {"id":"reactjs", "name": "React JS" },
-    {"id":"angularjs", "name": "Angular JS"},
-    {"id":"emberjs", "name": "Ember JS"},
-    {"id":"python", "name": "Python"},
-    {"id":"mobile", "name": "Mobile Apps"}
-  ]
-}
+[{"id":1,"name":"Ruby On Rails","details":null,"image_url":null,"created_at":"2016-08-15T12:26:45.704Z","updated_at":"2016-08-15T12:26:45.704Z"},{"id":2,"name":"React JS","details":null,"image_url":null,"created_at":"2016-08-15T12:26:45.710Z","updated_at":"2016-08-15T12:26:45.710Z"},{"id":3,"name":"Angular JS","details":null,"image_url":null,"created_at":"2016-08-15T12:26:45.715Z","updated_at":"2016-08-15T12:26:45.715Z"},{"id":4,"name":"Ember JS","details":null,"image_url":null,"created_at":"2016-08-15T12:26:45.720Z","updated_at":"2016-08-15T12:26:45.720Z"},{"id":5,"name":"Mobile Apps","details":null,"image_url":null,"created_at":"2016-08-15T12:26:45.726Z","updated_at":"2016-08-15T12:26:45.726Z"},{"id":6,"name":"Python","details":null,"image_url":null,"created_at":"2016-08-15T12:26:45.732Z","updated_at":"2016-08-15T12:26:45.732Z"}]

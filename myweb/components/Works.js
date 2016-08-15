@@ -3,38 +3,53 @@ import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
 import NavLink from "./NavLink"
 import axios from 'axios'
 
-const requestUrl = 'http://kannansv.in/data/meta.json';
+const requestUrl = 'http://kaapi.herokuapp.com/languages?t=xxyyzz';
 
 export default React.createClass({
     getInitialState: function() {
       return {
-        languages: []
+        languages: [],
+        load: false
       }
     },
 
     contextTypes: {
       router: React.PropTypes.object
     },
-
     componentDidMount: function() {
       var _this = this;
       this.serverRequest =
         axios
           .get(requestUrl)
           .then(function(result) {
-            console.log(result);
             _this.setState({
-              languages: result.data.languages
+              languages: result.data
             });
-          });
-      this.context.router.push('/works/rails/');
+          }).then(function () {
+            _this.setState({
+              load: true
+            });
+            this.context.router.push('/works/rails/');
+        }.bind(this));
     },
 
     componentWillUnmount: function() {
     },
 
+    renderLoadingView() {
+      return (
+        <div>
+          Loading please wait...
+        </div>
+      );
+    },
+
     render(){
       const results = this.state.languages;
+
+      if (!this.state.load) {
+        return this.renderLoadingView();
+      }
       return (
         <div>
           <div className="about-me contact-me">
