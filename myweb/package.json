@@ -8,6 +8,7 @@
   "author": "kannanhudson@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.13.1",
     "react": "^0.14.7",
     "react-bootstrap": "^0.30.2",
     "react-dom": "^0.14.7",

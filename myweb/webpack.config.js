@@ -1,11 +1,11 @@
 var webpack = require('webpack')
 
 module.exports = {
-  entry: '/myweb/index.js',
+  entry: './index.js',
 
   output: {
     filename: 'bundle.js',
-    publicPath: '/myweb'
+    publicPath: ''
   },
 
   plugins: [

@@ -10,7 +10,6 @@ export default React.createClass({
           <NavBar />
           {this.props.children}
         </Grid>
-
       </div>
     )
   }

@@ -1,9 +1,40 @@
 import React from 'react'
 import {Row, Col, ListGroup, ListGroupItem} from 'react-bootstrap'
 import NavLink from "./NavLink"
+import axios from 'axios'
+
+const requestUrl = 'http://localhost:8080/data/meta.json';
 
 export default React.createClass({
+    getInitialState: function() {
+      return {
+        languages: []
+      }
+    },
+
+    contextTypes: {
+      router: React.PropTypes.object
+    },
+
+    componentDidMount: function() {
+      var _this = this;
+      this.serverRequest =
+        axios
+          .get(requestUrl)
+          .then(function(result) {
+            console.log(result);
+            _this.setState({
+              languages: result.data.languages
+            });
+          });
+      this.context.router.push('/works/rails/');
+    },
+
+    componentWillUnmount: function() {
+    },
+
     render(){
+      const results = this.state.languages;
       return (
         <div>
           <div className="about-me contact-me">
@@ -13,13 +44,9 @@ export default React.createClass({
             <Row className="show-grid">
               <Col xs={1} md={2}>
                 <ListGroup>
-                  <NavLink to="/works/rails" className="list-group-item">Ruby On Rails</NavLink>
-                  <NavLink to="/works/ruby" className="list-group-item">Ruby</NavLink>
-                  <NavLink to="/works/reactjs" className="list-group-item">React JS</NavLink>
-                  <NavLink to="/works/angularjs" className="list-group-item">Angular JS</NavLink>
-                  <NavLink to="/works/emberjs" className="list-group-item">Ember JS</NavLink>
-                  <NavLink to="/works/python" className="list-group-item">Python</NavLink>
-                  <NavLink to="/works/mobile" className="list-group-item">Mobile Apps</NavLink>
+                  {results.map(function(job) {
+                    return <NavLink key={job.id} to={"/works/"+ job.id} className="list-group-item">{job.name}</NavLink>
+                  })}
                 </ListGroup>
               </Col>
               <Col xs={1} md={10}>
