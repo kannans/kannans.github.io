@@ -2,6 +2,7 @@ import React from 'react'
 
 export default React.createClass({
     render(){
+      alert("Sdf");
       return (
         <div>
           <div className="about-me contact-me">

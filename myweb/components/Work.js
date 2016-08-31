@@ -6,21 +6,31 @@ export default React.createClass({
     getInitialState: function() {
       return {
         projects: [],
-        pageLoad: false
+        pageLoad: false,
+        projectId: "",
       }
     },
 
-    componentDidMount: function() {
+    renderLoadingView() {
+
+      return (
+        <div>
+          Loading please wait...
+        </div>
+      );
+    },
+
+    fetchData(id){
       var _this = this;
-      const  { langName } = this.props.params
+      const langName = id;
       var requestUrl = `http://kaapi.herokuapp.com/languages/${langName}/projects?t=xxyyzz`;
       this.serverRequest =
         axios
           .get(requestUrl)
           .then(function(result) {
-            console.log(result);
             _this.setState({
-              projects: result.data
+              projects: result.data,
+              projectId: langName
             });
           }).then(function () {
           _this.setState({
@@ -29,16 +39,20 @@ export default React.createClass({
         }.bind(this));
     },
 
-    renderLoadingView() {
-      return (
-        <div>
-          Loading please wait...
-        </div>
-      );
+    getProjects() {
+      const {langName} = this.props.params;
+      const id  = this.state.projectId;
+      if (langName !== id) {
+        this.setState({ pageLoad: false, projectId: langName});
+        this.fetchData(langName)
+      }
     },
 
     render(){
       const projects = this.state.projects;
+
+      this.getProjects();
+
       if (!this.state.pageLoad) {
         return this.renderLoadingView();
       }
